@@ -78,8 +78,14 @@ E uma seleção da tabela "Shippers":
 
 A seguinte declaração SQL lista o número de pedidos enviados por cada entregador:
 
-### Exemplo
+### Exemplo 1
 
 SELECT Shippers.ShipperName, COUNT(Orders.OrderID) AS NumberOfOrders FROM Orders
 LEFT JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID
 GROUP BY ShipperName;
+
+**EXEMPLO 2**
+
+**SELECT** tb_seller.name, **ROUND**(**CAST** (**SUM**(price * quantity) **AS** numeric), 2) **FROM** tb_sale **INNER JOIN** tb_seller **ON** tb_sale.seller_id = tb_seller.id **GROUP BY** tb_seller.nome
+
+obs: gera um relatório informando o nome do vendedor e suas respectivas vendas somadas
